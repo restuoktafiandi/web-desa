@@ -1,0 +1,44 @@
+<%- include("partials/header") %>
+  <div class="mt-5 pt-5">
+    <h3>Daftar Berita</h3>
+    <a href="/admin-webpdesa/tambah-berita" class="btn btn-success mt-5 mb-3">Tambah Berita</a>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th style="background-color: #343a40; color: white;">ID</th>
+          <th style="background-color: #343a40; color: white;">Judul</th>
+          <th style="background-color: #343a40; color: white;">Penulis</th>
+          <th style="background-color: #343a40; color: white;">Tanggal Posting</th>
+          <th style="background-color: #343a40; color: white;">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% daftarBerita.forEach(function(berita, index) { %>
+          <tr>
+            <td>
+              <%= index + 1 %>
+            </td>
+            <td>
+              <%= berita.judul %>
+            </td>
+            <td>
+              <%= berita.penulis %>
+            </td>
+            <td>
+              <%= berita.tanggal_posting.toLocaleDateString() %>
+            </td>
+            <input type="hidden" id="gambar-url" name="gambar-url">
+            <td>
+              <form id="delete-form" action="/hapus-berita/<%= berita.id %>" method="POST"
+                onsubmit="return confirm('Apakah Anda yakin?')">
+                <button type="submit" class="btn btn-danger btn-sm">Hapus Berita</button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+
+  <%- include("partials/footer") %>

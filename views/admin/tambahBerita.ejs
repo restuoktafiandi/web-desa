@@ -1,0 +1,27 @@
+<%- include("partials/header") %>
+  <div class="container mt-5">
+    <h2>Tambah Berita Baru</h2>
+    <a href="/admin-webpdesa/berita" class="btn btn-outline-primary mt-5 mb-3">Kembali Ke List Berita</a>
+    <form action="/simpan-berita" method="post">
+      <div class="mb-3">
+        <label for="judul" class="form-label">Judul Berita:</label>
+        <input type="text" class="form-control" id="judul" name="judul" required>
+      </div>
+      <div class="mb-3">
+        <label for="penulis" class="form-label">Penulis Berita:</label>
+        <input type="text" class="form-control" id="penulis" name="penulis" required>
+      </div>
+      <div class="mb-3">
+        <label for="konten" class="form-label">Konten Berita:</label>
+        <div id="editor" style="height: 300px;"></div>
+        <input type="hidden" name="konten" id="konten">
+      </div>
+      <div class="mb-3">
+        <label for="tanggal_posting" class="form-label">Tanggal Posting:</label>
+        <input type="date" class="form-control" id="tanggal" name="tanggal_posting">
+      </div>
+      <button type="submit" class="btn btn-success">Simpan Berita</button>
+    </form>
+  </div>
+  <%- include("partials/footer") %>
+  
