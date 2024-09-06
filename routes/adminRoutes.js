@@ -4,15 +4,16 @@ const multer = require("multer")
 const path = require("path")
 const { getIndexAdminPage, getTambahBerita, postTambahBerita, getDaftarBerita, getDaftarBeritaDiAdmin, deleteBerita } = require("./../controllers/adminController")
 const { getRegisterPage, getLoginPage } = require("./../controllers/authController")
+const  { authentication } = require("./../middlewares/authMiddleware")
 
-router.get("/admin-webpdesa", getIndexAdminPage)
-router.get("/admin-webpdesa/berita", getDaftarBeritaDiAdmin)
-router.get("/admin-webpdesa/tambah-berita", getTambahBerita)
+router.get("/admin-webpdesa", authentication, getIndexAdminPage)
+router.get("/admin-webpdesa/berita", authentication, getDaftarBeritaDiAdmin)
+router.get("/admin-webpdesa/tambah-berita", authentication, getTambahBerita)
 
 router.get("/admin-webpdesa/register", getRegisterPage)
 router.get("/admin-webpdesa/login", getLoginPage)
 
-router.post("/simpan-berita", postTambahBerita)
+router.post("/simpan-berita", authentication, postTambahBerita)
 
 router.get("/berita-terbaru", getDaftarBerita)
 
@@ -31,6 +32,6 @@ router.post('/upload-image', upload.single('image'), (req, res) => {
   res.json({ url: `/img/${req.file.filename}` });
 });
 
-router.get('/hapus-berita/:id', deleteBerita);
+router.get('/hapus-berita/:id', authentication, deleteBerita);
 
 module.exports = router

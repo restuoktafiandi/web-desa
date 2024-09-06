@@ -29,10 +29,7 @@
             </td>
             <input type="hidden" id="gambar-url" name="gambar-url">
             <td>
-              <form id="delete-form" action="/hapus-berita/<%= berita.id %>" method="POST"
-                onsubmit="return confirm('Apakah Anda yakin?')">
-                <button type="submit" class="btn btn-danger btn-sm">Hapus Berita</button>
-              </form>
+              <a href="/hapus-berita/<%= berita.id %>" class="btn btn-danger btn-sm">Hapus</a>
             </td>
           </tr>
           <% }) %>
