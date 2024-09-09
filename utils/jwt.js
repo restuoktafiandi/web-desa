@@ -11,7 +11,7 @@ const verifyToken = (token) => {
   try {
     return jwt.verify(token, process.env.JWT_SECRET_KEY);
   } catch (error) {
-    throw new Error('Invalid token');
+    throw new Error('Invalid token, silahkan login kembali');
   }
 };
 

@@ -24,6 +24,10 @@ app.use(routerAuth)
 app.use(routerAdmin)
 app.use(routerWeb)
 
+app.use((req, res) => {
+  res.render("404")
+})
+
 const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.info(`Server run on http://localhost:${PORT}`);

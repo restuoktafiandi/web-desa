@@ -1,6 +1,20 @@
 <%- include("partials/header") %>
   <div class="container mt-5">
     <h2>Tambah Gambar Baru</h2>
+
+    <div class="alert alert-info mt-4">
+      <h5>Petunjuk Menambahkan Gambar ke Editor</h5>
+      <p>Untuk menambahkan gambar ke dalam editor, silakan ikuti langkah-langkah berikut:</p>
+      <ol>
+        <li>Klik <strong>Menu Gambar</strong> di navigasi atau <a href="/admin-webpdesa/gambar" target="_blank">tautan ini</a> untuk membuka halaman daftar gambar di tab baru.</li>
+        <li>Di halaman daftar gambar, pilih gambar yang diinginkan dan salin <strong>URL</strong> dari gambar tersebut.</li>
+        <li>Kembali ke tab editor.</li>
+        <li>Klik ikon <strong>Gambar</strong> di toolbar editor.</li>
+        <li>Tempel (paste) URL gambar yang sudah Anda salin ke dalam kolom URL gambar, lalu klik <strong>Insert</strong>.</li>
+      </ol>
+      <p>Setelah itu, gambar akan ditambahkan ke dalam editor.</p>
+    </div>
+    
     <a href="/admin-webpdesa/gambar" class="btn btn-outline-primary mt-5 mb-3">Kembali Ke List Gambar</a>
     <form action="/simpan-gambar" method="POST" enctype="multipart/form-data">
       <div class="mb-3">

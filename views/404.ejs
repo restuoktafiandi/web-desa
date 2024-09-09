@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Not Found</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .error-container {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .error-container h1 {
+            font-size: 4rem;
+        }
+        .error-container p {
+            font-size: 1.25rem;
+        }
+        .spinner-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .spinner-container .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            border-width: .4em;
+        }
+    </style>
+</head>
+<body>
+    <div class="spinner-container" id="loadingSpinner">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <div class="container error-container" id="errorContent">
+        <h1 class="display-1 text-danger">404</h1>
+        <p class="lead">Halaman Tidak Ditemukan!</p>
+        <p>Halaman yang Anda cari tidak tersedia.</p>
+        <a href="/" class="btn btn-primary">Kembali ke Beranda</a>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        setTimeout(() => {
+            document.getElementById('loadingSpinner').style.display = 'none';
+            document.getElementById('errorContent').style.display = 'flex';
+        }, 2000);
+    </script>
+</body>
+</html>

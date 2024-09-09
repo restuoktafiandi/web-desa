@@ -141,21 +141,22 @@
     <a href="/admin-webpdesa" class="<%= activePage === 'home' ? 'active' : '' %>"><i
         class="bi bi-house-door"></i><span>Home</span></a>
     <a href="/admin-webpdesa/berita" class="<%= activePage === 'berita' ? 'active' : '' %>"><i
-        class="bi bi-newspaper"></i><span>Berita</span></a>
-    <a href="/admin-webpdesa/gambar" target="_blank" class="<%= activePage === 'gambar' ? 'active' : '' %>"><i class="bi bi-card-image"></i><span>Gambar</span></a>
-    <a href="#pengumuman" class="<%= activePage === 'pengumuman' ? 'active' : '' %>"><i
+        class="bi bi-newspaper"></i><span>Berita dan Pengumuman</span></a>
+    <a href="/admin-webpdesa/gambar" target="_blank" class="<%= activePage === 'gambar' ? 'active' : '' %>"
+      onclick="smoothOpen(event)"><i class="bi bi-card-image"></i><span>Gambar</span></a>
+    <!-- <a href="#pengumuman" class="<%= activePage === 'pengumuman' ? 'active' : '' %>"><i
         class="bi bi-megaphone"></i><span>Pengumuman</span></a>
     <a href="#statistik-penduduk" class="<%= activePage === 'statistik-penduduk' ? 'active' : '' %>"><i
         class="bi bi-people"></i><span>Statistik Penduduk</span></a>
     <a href="#struktur-desa" class="<%= activePage === 'struktur-desa' ? 'active' : '' %>"><i
         class="bi bi-person-lines-fill"></i><span>Struktur Desa</span></a>
     <a href="#wisata" class="<%= activePage === 'wisata' ? 'active' : '' %>"><i
-        class="bi bi-map"></i><span>Wisata</span></a>
+        class="bi bi-map"></i><span>Wisata</span></a> -->
   </div>
   <i class="bi bi-card-image"></i>
   <form action="/admin-webpdesa/logout" method="POST">
-    <button class="logout-btn" style="position: fixed; top: 20px; right: 20px; z-index: 100;"><i class="bi bi-box-arrow-right"></i>Logout</button>
+    <button class="logout-btn" style="position: fixed; top: 20px; right: 20px; z-index: 100;"><i
+        class="bi bi-box-arrow-right"></i>Logout</button>
   </form>
 
   <div class="content" id="content">
-    
