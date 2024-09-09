@@ -1,0 +1,36 @@
+<%- include("partials/header") %>
+  <div class="mt-5 pt-5">
+    <h3>Daftar Gambar</h3>
+    <a href="/admin-webpdesa/tambah-gambar" class="btn btn-success mt-5 mb-3">Tambah Gambar</a>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th style="background-color: #343a40; color: white;">No</th>
+          <th style="background-color: #343a40; color: white;">Judul Gambar</th>
+          <th style="background-color: #343a40; color: white;">URL Gambar</th>
+          <th style="background-color: #343a40; color: white;">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% daftarGambar.forEach(function(gambar, index) { %>
+          <tr>
+            <td>
+              <%= index + 1 %>
+            </td>
+            <td>
+              <%= gambar.judul_gambar %>
+            </td>
+            <td>
+              <%= gambar.url_gambar %>
+            </td>
+            <td>
+              <a href="/hapus-gambar/<% gambar.id %>" class="btn btn-danger btn-sm">Hapus</a>
+            </td>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+
+  <%- include("partials/footer") %>

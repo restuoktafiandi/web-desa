@@ -1,0 +1,18 @@
+<%- include("partials/header") %>
+  <div class="container mt-5">
+    <h2>Tambah Gambar Baru</h2>
+    <a href="/admin-webpdesa/gambar" class="btn btn-outline-primary mt-5 mb-3">Kembali Ke List Gambar</a>
+    <form action="/simpan-gambar" method="POST" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="judul_gambar" class="form-label">Judul Gambar</label>
+        <input type="text" class="form-control" id="judul" name="judul_gambar" required>
+      </div>
+      <div class="mb-3">
+        <label for="penulis" class="form-label">File Gambar</label>
+        <input type="file" class="form-control" id="penulis" name="gambar" required>
+      </div>
+      <button type="submit" class="btn btn-success">Simpan Gambar</button>
+    </form>
+  </div>
+  <%- include("partials/footer") %>
+  

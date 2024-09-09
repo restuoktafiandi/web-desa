@@ -5,10 +5,7 @@ const authentication = async (req, res, next) => {
   try {
     const token = req.cookies.authToken;
     if (!token) {
-      throw {
-        code: 401,
-        message: "Token not provided!"
-      };
+      return res.render("error")
     }
 
     const decode = jwtUtils.verifyToken(token);
